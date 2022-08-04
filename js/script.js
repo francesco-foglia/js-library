@@ -25,6 +25,7 @@ $(function () {
 
   printBooks(books);
 
+
   $("#add-book").click(
 
     function () {
@@ -35,6 +36,52 @@ $(function () {
       $("#input-author").val("");
       $("#input-year").val("");
     }
+
+  );
+
+
+  $("#search-button").click(
+
+ 	  function() {
+
+      if ($("#input-search").val() == "") {
+        alert("Inserisci un parametro di riceca");
+        printBooks(books);
+      }
+
+		  let searchedBooks = [];
+
+      books.forEach(
+        (element) => {
+
+          let search = $("#input-search").val();
+          let searchLowerCase = search.toLowerCase();
+          let titleLowerCase = element.title.toLowerCase();
+          let authorLowerCase = element.author.toLowerCase();
+
+          if ( titleLowerCase.includes(searchLowerCase) ||
+               authorLowerCase.includes(searchLowerCase) ||
+               element.year.includes(searchLowerCase) ) {
+
+            searchedBooks = [
+              ...searchedBooks,
+              element
+            ];
+
+          }
+
+        }
+      );
+
+      if (searchedBooks == "") {
+        alert("Nessun risultato corrispondente alla ricerca");
+        $("#input-search").val("");
+        printBooks(books);
+      } else {
+        printBooks(searchedBooks);
+      }
+
+ 	  }
 
   );
 
