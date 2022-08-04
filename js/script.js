@@ -1,4 +1,4 @@
-$(function () {
+$(() => {
 
   let books = [
     {
@@ -26,8 +26,8 @@ $(function () {
   printBooks(books);
 
 
-  $("#add-book").click(
-    function () {
+  $("#add-button").click(
+    () => {
       books = addBook(books);
       printBooks(books);
 
@@ -37,8 +37,8 @@ $(function () {
     }
   );
 
-  $(".add-book").keydown(
-    function (event) {
+  $(".input-add-book").keydown(
+    (event) => {
       if (event.which == 13) {
 
         books = addBook(books);
@@ -53,13 +53,13 @@ $(function () {
 
 
   $("#search-button").click(
-    function() {
+    () => {
       searchBooks();
     }
   );
 
   $("#input-search").keydown(
-    function (event) {
+    (event) => {
       if (event.which == 13) {
         searchBooks();
       }
@@ -68,7 +68,7 @@ $(function () {
 
   /*
   $("#input-search").keyup(
-    function() {
+    () => {
       searchBooks();
     }
   );
@@ -145,7 +145,7 @@ $(function () {
   function searchBooks() {
 
     if ($("#input-search").val() == "") {
-      alert("Inserisci un parametro di riceca");
+      alert("Inserisci un parametro di ricerca");
       printBooks(books);
     }
 
