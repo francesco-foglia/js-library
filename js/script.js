@@ -27,7 +27,6 @@ $(function () {
 
 
   $("#add-book").click(
-
     function () {
       books = addBook(books);
       printBooks(books);
@@ -36,7 +35,20 @@ $(function () {
       $("#input-author").val("");
       $("#input-year").val("");
     }
+  );
 
+  $(".add-book").keydown(
+    function (event) {
+      if (event.which == 13) {
+
+        books = addBook(books);
+        printBooks(books);
+
+        $("#input-title").val("");
+        $("#input-author").val("");
+        $("#input-year").val("");
+      }
+    }
   );
 
 
