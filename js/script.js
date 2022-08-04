@@ -35,10 +35,12 @@ $(function () {
     array.forEach(
       (element) => {
         $("#library").append(
-        `<div class="book card col-md-5 col-lg-2 m-2 p-2">
-          <p class="title h5">${element.title}</p>
-          <p class="author h6">${element.author}</p>
-          <p class="year h6">${element.year}</p>
+        `<div class="book col-md-6 col-lg-4 my-2">
+          <div class="card p-2">
+            <p class="title h5">${element.title}</p>
+            <p class="author h6">${element.author}</p>
+            <p class="year h6">${element.year}</p>
+          </div>
         </div>`
         );
       }
