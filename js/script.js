@@ -115,11 +115,23 @@ $(() => {
       }
 
       let i = 0;
-      let find = false;
+      let found = false;
 
-      while (i < array.length && find == false) {
-        if (array[i].title == newBook.title && array[i].author == newBook.author && array[i].year == newBook.year) {
-          find = true;
+      while (i < array.length && found == false) {
+
+        let arrayTitle = array[i].title.toLowerCase();
+        let arrayAuthor = array[i].author.toLowerCase();
+        let arrayYear = array[i].year.toLowerCase();
+
+        let newBookTitle = newBook.title.toLowerCase();
+        let newBookAuthor = newBook.author.toLowerCase();
+        let newBookYear = newBook.year.toLowerCase();
+
+        if (arrayTitle == newBookTitle &&
+          arrayAuthor == newBookAuthor &&
+          arrayYear == newBookYear) {
+
+          found = true;
           alert("Libro già presente");
         }
         else {
@@ -127,7 +139,7 @@ $(() => {
         }
       }
 
-      if (find == false) {
+      if (found == false) {
         array = [
           ...array,
           newBook
@@ -156,6 +168,7 @@ $(() => {
 
         let search = $("#input-search").val();
         let searchLowerCase = search.toLowerCase();
+
         let titleLowerCase = element.title.toLowerCase();
         let authorLowerCase = element.author.toLowerCase();
         let yearLowerCase = element.year.toLowerCase();
