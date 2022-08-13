@@ -87,9 +87,9 @@ $(() => {
 
           `<div class="col-md-6 col-lg-4 my-2">
             <div class="card p-2">
-              <p class="h5">${element.title}</p>
-              <p class="h6">${element.author}</p>
-              <p class="h6">${element.year}</p>
+              <h2 class="h5">${element.title}</h2>
+              <h3 class="h6">${element.author}</h3>
+              <h4 class="h6">${element.year}</h4>
             </div>
           </div>`
 
@@ -158,10 +158,11 @@ $(() => {
         let searchLowerCase = search.toLowerCase();
         let titleLowerCase = element.title.toLowerCase();
         let authorLowerCase = element.author.toLowerCase();
+        let yearLowerCase = element.year.toLowerCase();
 
-        if ( titleLowerCase.includes(searchLowerCase) ||
-             authorLowerCase.includes(searchLowerCase) ||
-             element.year.includes(searchLowerCase) ) {
+        if (titleLowerCase.includes(searchLowerCase) ||
+          authorLowerCase.includes(searchLowerCase) ||
+          yearLowerCase.includes(searchLowerCase)) {
 
           searchedBooks = [
             ...searchedBooks,
