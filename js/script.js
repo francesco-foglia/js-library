@@ -82,11 +82,15 @@ $(() => {
     $("#library").html("");
 
     array.forEach(
-      (element) => {
+      (element, index) => {
+
         $("#library").append(
 
           `<div class="col-md-6 col-lg-4 my-2">
             <div class="card p-2">
+              <div class="btn_close close-${index} mb-2">
+                <span>x</span>
+              </div>
               <h2 class="h5">${element.title}</h2>
               <h3 class="h6">${element.author}</h3>
               <h4 class="h6">${element.year}</h4>
@@ -94,6 +98,14 @@ $(() => {
           </div>`
 
         );
+
+        $(`.btn_close.close-${index}`).click(
+          () => {
+            array.splice(index, 1);
+            printBooks(array);
+          }
+        );
+
       }
     );
 
