@@ -91,6 +91,7 @@ $(() => {
               <div class="btn_close close-${index} mb-2">
                 <span>x</span>
               </div>
+              <img src="img/book.jpg" alt="${element.title}">
               <h2 class="h5">${element.title}</h2>
               <h3 class="h6">${element.author}</h3>
               <h4 class="h6">${element.year}</h4>

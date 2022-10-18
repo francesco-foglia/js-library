@@ -35,3 +35,9 @@ input:focus {
   font-weight: bold;
   cursor: pointer;
 }
+
+img {
+  width: 100%;
+  max-width: 200px;
+  margin: 1rem auto;
+}
